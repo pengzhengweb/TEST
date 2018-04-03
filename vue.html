@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		<title>Document</title>
+	</head>
+
+	<body>
+		<div id="app">
+			<input type="text" v-model="mation" id="ipt1"><br>
+			<input type="text" v-model="username" id='ipt2'><br>
+			<input type="button" value="发表留言" @click='add'><br>
+			<ul>
+				<li v-for='(item,index) of arr' :key='item.id'>
+					<span>{{item.id}}</span>-----<span>{{item.mat}}</span>-------<span>{{item.name}}</span>--
+					< a href=" " @click='del(index)'>删除</ a>
+					< a href="Javascript:void(0)" @click='focus($event,index)'>修改</ a>
+					<input type="button" v-show='item.bl' value="确认修改" id="motify" @click='motify(index)'><br>
+				</li>
+				<button @click='clear'>一键清空留言</button>
+			</ul>
+		</div>
+	</body>
+	<script src="vue.js"></script>
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				mation: '一年轮回君千殇',
+				username: '傲视八荒俯天下',
+				arr: [{
+						id: 1,
+						mat: '今晚约么~',
+						name: '貂蝉',
+						bl: false
+					},
+					{
+						id: 2,
+						mat: '当然约啦~',
+						name: '吕布',
+						bl: false
+					}
+				],
+			},
+			methods: {
+				add: function() {
+					this.arr.push({
+						id: this.arr.length + 1,
+						mat: this.mation,
+						name: this.username,
+						bl: false
+					})
+				},
+				clear: function() {
+					this.arr = [];
+				},
+				del: function(index) {
+					this.arr.splice(index, 1)
+				},
+				focus: function(e, index) {
+					// e.srcElement.innerHTML='确认修改'
+					this.ipt1 = document.getElementById('ipt1');
+					this.ipt1.focus();
+					this.arr[index].bl = true;
+				},
+				motify: function(index) {
+					this.ipt2 = document.getElementById('ipt2');
+					this.arr[index].mat = this.ipt1.value;
+					this.arr[index].name = this.ipt2.value;
+					this.arr[index].bl = false;
+				}
+			},
+		})
+	</script>
+
+</html>
