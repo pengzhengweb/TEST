@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.js"></script>
+	</head>
+	<body>
+		<!--会直接干掉dom节点-->
+		<div id="app">
+			<p v-if = "items > 10">这个数字大于10</p><!--必须父子节点-->
+			<p v-else-if = "items > 1">这个数字小于10大于1</p>
+			<p v-else>这个数字小于1</p>
+		
+		
+		<template v-if = "items > 100">
+			<p >这个数字大于100</p>
+			<p >这个数字还大于1</p>
+		</template>
+		
+		
+		<!--让display:none的方式改变Dom-->
+		<p v-show = "Ninja">i am hide</p>
+	    <p v-show = "!Ninja">i am here</p>
+	    <buttom v-on:click = "Ninja = !Ninja">点我改变状态</buttom>
+	   </div>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+//					items:27,
+					items:299,
+					Ninja:true
+				}
+			})
+		</script>
+	</body>
+</html>
