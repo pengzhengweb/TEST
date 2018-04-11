@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<div v-bind:title="msg| firstWrodUp">
+				{{msg}}
+			</div>
+		</div>
+		<script>
+			new Vue({
+				el: "#app",
+				data: {
+					msg: "hello,world"
+				},
+				filters: {
+					firstWrodUp: function(value1) {
+						var val = value1.toString(); //这是把所有的都变为字符串处理
+						var arr = val.split(" "); //这是把字符串变为数组的操作
+						var newArr = arr.map(function(value2) {
+							return value2.charAt(0).toUpperCase() + value2.slice(1);
+						});
+						return newArr.join(" ") //这是把数组变为字符串的操作
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

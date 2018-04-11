@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<div v-for="items in persons" v-bind:key="items.id">
+				{{items.name}} {{items.id}}
+				<input type="text">
+			</div>
+			<button v-on:click="add">click me</button>
+			<button v-on:click="reverse">reverse</button>
+		</div>
+		<script>
+			new Vue({
+				el: "#app",
+				data: {
+					persons: [{
+						name: "liu",
+						id: 1
+					}, {
+						name: "zhao",
+						id: 2
+					}, {
+						name: "qian",
+						id: 3
+					}]
+				},
+				methods: {
+					add: function() {
+						this.persons.push({
+							name: "zheng",
+							id: 4
+						})
+					},
+					reverse: function() {
+						this.persons.reverse();
+					} //v-for复用模版识别成一个input框
+				}
+
+			})
+		</script>
+	</body>
+</html>
