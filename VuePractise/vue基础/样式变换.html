@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.js"></script>
+	</head>
+<!--在css 和html改变数据通过绑定数据的方式-->
+	<body>
+		<div id="app">
+			<!--<div style="height:100px;width:100px;" v-bind:style="{backgroundColor:'#000'}"></div>-->
+
+			<div style="height:100px;width:100px;" v-bind:style="[styles1,styles2]">wwees</div>
+
+			<button v-on:click="change">change</button>
+		</div>
+		<script>
+			new Vue({
+				el: "#app",
+				data: {
+					color: "yellow",
+					styles: {
+						"backgroundColor": "red",
+						"border-radius": "5px"
+					}
+
+				},
+				computed: {
+					styles1: function() {
+						return {
+							"background-color": this.color
+						}
+					}
+					/*styles2: function() {
+						return {
+							"border-radius":50%
+						}
+					}*/
+				},//在js里绑定数据得通过计算属性依赖
+				methods: {
+					change: function() {
+						if(this.color == "red") {
+							this.color == "blue";
+						} else {
+							this.color == "red";
+						}
+					}
+				}
+			})
+		</script>
+	</body>
+
+</html>

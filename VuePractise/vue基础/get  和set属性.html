@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.js"></script>
+	</head>
+
+	<body>
+		<div id="app">
+			<div>{{num}}</div>
+
+			<div>{{firstName}}</div>
+			<div>{{lastName}}</div>
+
+			<div>{{fullName}}</div>
+
+			<button v-on:click="num++">add</button>
+			<button v-on:click="changeName">changeName</button>
+			<button v-on:click="changeFullName">changeFullName</button>
+		</div>
+		<script>
+			new Vue({
+				el: "#app",
+				data: {
+					num: 0,
+					firstName: "zp",
+					lastName: "不是前端小白"
+				},
+
+				computed: {
+					fullName: {
+						get: function() {
+							alert("我执行了get")
+							return this.lastName + " " + this.firstName
+						},
+						set: function(newValue) {
+							console.log(newValue);
+							var arr = newValue.split(" ");
+							this.lastName = arr[0];
+							this.firstName = arr[1];
+						},
+					}
+				},
+				methods: {
+					changeName: function() {
+						this.firstName = "ming";
+						this.lastName = "xiao";
+					},
+					changeFullName: function() {
+						this.fullName = "xiao hong"
+					}
+				}
+
+			})
+		</script>
+	</body>
+
+</html>

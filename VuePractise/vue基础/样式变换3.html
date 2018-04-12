@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.js"></script>
+		<style>
+			.shape{
+				height:100px;
+				width:150px;
+				float:left;
+				margin:10px;
+			}
+			.circle{
+				background:red;
+				border-radius:50%;
+			}
+			.square{				
+				background-color:blue
+			}
+		</style>
+	</head>
+<!--在css 和html改变数据通过绑定数据的方式-->
+	<body>
+		<div id="app">
+			<div v-for="shape in shapes" class="shape" v-bind:class="{circle:shape.isRound,square:!shape.isRound}"></div>
+		</div>
+		<script>
+			new Vue({
+				el: "#app",
+				data: {
+					shapes:[{isRound:true},{isRound:false}]
+
+				},
+				computed: {
+					
+				},
+				methods:{
+					
+				}
+			})
+		</script>
+	</body>
+
+</html>

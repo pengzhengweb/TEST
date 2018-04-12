@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.js"></script>
+		<style>
+			.shape{
+				height:100px;
+				width:150px;
+				float:left;
+				margin:10px;
+			}
+			.circle{
+				background:red;
+				border-radius:50%;
+			}
+			.square{				
+				background-color:blue
+			}
+			.triangle{
+				width:0;
+				height:0;				
+			}
+			.up{
+				border-left:100px solid transparent;
+				border-right:100px solid transparent;
+				border-bottom:100px solid orange
+			}
+			.down{
+				border-left:100px solid transparent;
+				border-right:100px solid transparent;
+				border-top:100px solid orange
+			}
+			.animation{
+				animation:strentch 1.0s ease-in-out
+			}
+			@keyframes strentch{
+				0%{
+					transform:scale(0.3)
+				}
+				100%{
+					transform:scale(1)
+				}
+			}
+		</style>
+	</head>
+<!--在css 和html改变数据通过绑定数据的方式-->
+	<body>
+		<div id="app">
+			<div v-for="shape in shapes" class="shape"  :class="[shape.shape,shape.diracton?shape.diracton:' ',{animation:shape.animation}]"></div>
+		</div>
+		<script>
+			new Vue({
+				el: "#app",
+				data: {
+					shapes:[{shape:'circle',animation:true},{shape:'square'},{shape:'triangle',diracton:"up",animation:true},{shape:'triangle',diracton:"down"}]
+				},
+				
+			})
+		</script>
+	</body>
+
+</html>

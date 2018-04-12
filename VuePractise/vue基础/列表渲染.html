@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<!--<table>
+				<thead>
+					<td>姓名</td>
+					<td>职位</td>
+					<td>公司</td>
+					<td>索引</td>					
+				</thead>
+				<tbody>
+					<tr v-for="(person,index) in persons">
+						<td>{{person.name}}</td>
+						<td>{{person.job}}</td>
+						<td>{{company}}</td>
+						<td>{{index}}</td>
+					</tr>
+				</tbody>
+			</table>-->
+						
+			<!--<ul>
+				<li v-for="(item,index) in numbers">{{item}}({{index+1}})</li>
+			</ul>-->
+			
+			
+			<!--<div v-for = "(x,y,z) in persons">
+				 {{x}} : {{y}} ({{z}})
+			</div>-->
+			
+			<!--<div v-for = "s in 'sdfre' ">{{s}}</div><!--对于字符串，一定要是单引号-->
+			<!--<div v-for = "n in 10">{{n}}</div>-->
+		</div>
+		<script>
+			/*new Vue({
+				el:"#app",
+				data:{
+					persons:[
+					          {name:"liu",
+					           job:"css"},						
+					           
+					           {name:"xu",
+					            job:"js"},
+					            
+					           {name:"we",
+					            job:"html"},
+					
+				            ],
+				    company:"abc"	
+				},
+				
+			})*/
+			
+			new Vue({
+				el:"#app",
+				data:{
+					persons:{
+					       firstname:"zp",
+					       secondName:"we",
+					       age:54
+				        }
+				},
+				methods:{
+					getFullName:function(){
+						
+					},
+				}
+			})
+		</script>
+	</body>
+</html>

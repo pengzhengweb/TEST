@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-on:keyup="changeName"> output:{{name}}<br>
+			<input type="text"  v-on:keyup.enter.shift="name = $event.target.value">output:{{name}}<br>
+			<form action="" v-on:submit.prevent>
+				<input type="submit" />
+			</form>
+		</div>
+		<script>
+			new Vue({
+				el:"#app",
+				data:{
+					name:"hello",
+				},
+				methods:{
+					       changeName:function(event){
+					             this.name = event.target.value;
+				               },
+				          
+				      }				           
+			})
+		</script>
+	</body>
+</html>

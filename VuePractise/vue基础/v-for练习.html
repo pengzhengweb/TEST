@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.js"></script>
+	</head>
+	<body>
+		<div id="app">
+			<input type ="password" v-model ="password">
+			
+			<p v-if="chars>8">你的字符几个</p>
+			<p v-else-if="chars>1">你的字符1个</p>
+			<p v-else>你没有字符</p>
+			
+			
+			<ol>
+				<li v-for ="n in subs">
+					{{n.name}}
+					<ul>
+						<li v-for ="a in n.sub">{{a}}</li>
+					</ul>
+				</li>
+			</ol>
+			
+		</div>
+			<script>
+				new Vue({
+					el:"#app",
+					data:{
+						password:"df",
+						chars:8,
+						subs:[{name:"js",sub:["vue","react","augular"]},
+						      {name:"database",sub:["mysql","mongodb","sqls"]},
+						      {name:"system",sub:["macOS","linux","window"]}
+						     ]
+					},
+					methods:{
+						/*add:function(){
+							this.persons.push({name:"zheng",id:4})
+						},
+						reverse:function(){
+							this.persons.reverse();
+						}                                //v-for复用模版识别成一个input框*/
+					}
+					
+				})
+			</script>
+		
+	</body>
+</html>
