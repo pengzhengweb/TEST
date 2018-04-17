@@ -5,10 +5,19 @@
 		<title></title>
 		<script src="vue.js"></script>
 	</head>
+	<style>
+		#canvas{
+			width:100px;			
+			height:100px;
+			border:1px solid red
+		}
+	</style>
 	<body>
 		<div id="app">
 			<input type="text" v-on:keyup="changeName"> output:{{name}}<br>
-			<input type="text"  v-on:keyup.enter.shift="name = $event.target.value">output:{{name}}<br>
+			<input type="text"  v-on:keyup.enter="name = $event.target.value">output:{{name}}<br>
+			<div id="canvas" @mousemove="updateXY">{{x}},{{y}}
+				<span @mousemove.stop="">abc</span></div>
 			<form action="" v-on:submit.prevent>
 				<input type="submit" />
 			</form>
@@ -18,12 +27,18 @@
 				el:"#app",
 				data:{
 					name:"hello",
+					x:0,
+					y:0
 				},
 				methods:{
 					       changeName:function(event){
 					             this.name = event.target.value;
 				               },
-				          
+                           updateXY:function(event){
+				               	this.x = event.offsetX;
+				               	this.y = event.offsetY
+				               },
+				              
 				      }				           
 			})
 		</script>

@@ -35,7 +35,7 @@
 					},
 					
 				}*/
-				computed: {
+				computed: {//计算属性，是个属性所以不用（）
 					fullName: function() {
 						alert("我执行了") //依赖其中一项  就会重新执行，且会有缓存机制
 						return this.firstName + " " + this.lastName
