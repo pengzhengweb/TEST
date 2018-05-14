@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>登录验证</title>
+		<link type="text/css" rel="stylesheet" href="validateLogin.css">
+	</head>
+	<body>
+		<div class="wrapper">
+			<img class="logo" src="image/logo2.png" >
+			<div class="content">
+				<div class="login">登录</div>
+				<ul class="inputs">
+					<li >
+						<input id="inputNumber" type="text" placeholder="请输入手机号">
+						<p class="eleven">11位手机号</p>
+					</li>
+					<li >
+						<input id="inputPassword" type="password" placeholder="请输入密码">
+						<p class="six">密码以大写字母开头并不少于六位</p>
+					</li>
+				</ul>
+				<p id="warn">输入错误，请检查手机号和密码格式</p>
+				<div id="footer" class="true">
+					
+					<button id="btn">登录</button>
+					<span class="regiter">不是会员？<a class="go" href="javascript:void(0)" target=_blank>去注册</a></span>
+					<span class="forgetPassword">忘记密码</span>
+					<ul class="money">
+						<li class="wechat">
+							<img src="image/weixin.png">
+							<span class="wechatLogin">微信登录</span>
+						</li>
+						<li class="zhifubao">
+							<img src="image/zhifubao.png">
+							<span class="zhifubaoLogin">支付宝登录</span>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<script src="jquery.js"></script>
+		<script src="validateLogin.js"></script> 
+	</body>
+</html>

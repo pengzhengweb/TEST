@@ -1,0 +1,143 @@
+*{margin:0;padding:0}
+ul li{list-style-type:none}
+a{text-decoration:none}
+body{
+	background:url(image/bg.png) no-repeat center 120px;
+	background-color:rgb()
+}
+.wrapper{
+	position:relative;
+	/*border:1px solid black;*/
+	height:592px;
+	width:502px;
+	margin:120px auto;	
+	
+	
+}
+.wrapper .logo{
+	position:absolute;
+	left:50%;
+	margin-left:-46px;
+	/*top:50%;*/	
+}
+.wrapper .content{
+	
+	background:#fff;
+	position:absolute;
+	width:100%;
+	height:auto;
+	left:0;
+	top:110px;
+	
+	border-top:5px solid red;
+	
+}
+.wrapper .content .login{
+	position:absolute;
+	top:60px;
+	left:50%;
+	margin-left:-18px;
+	text-align:center;	
+	height:35px;
+	width:35px;
+	line-height:35px;
+	border-bottom:1px solid red;
+	color:red;
+	font-weight:200;
+}
+.wrapper .content .inputs{
+	/*margin:0 auto;*/
+}
+.wrapper .content #inputNumber,#inputPassword{
+	position:absolute;
+	left:50%;
+	/*top:120px;*/
+	margin-left:-232px;
+	width:450px;
+	height:50px;
+	border-radius:5px;
+	padding-left:10px;
+}
+.wrapper .content #inputNumber{
+	top:120px;
+	background:url(image/user.png) no-repeat right 
+}
+.wrapper .content #inputPassword{
+	top:190px;
+	background:url(image/key.png) no-repeat right
+}
+.wrapper .content .eleven,.six{
+    position:absolute;  
+    left:36px;
+    color:orange;
+    background-color:#fff;
+}
+.wrapper .content .eleven{
+	top:160px;
+}
+.wrapper .content .six{
+	top:231px;
+}
+.wrapper .content #footer{
+	 position:absolute;  
+	 /*top:265px;*/
+	 left:50%;
+	 margin-left:-232px;
+	 height:auto;
+	 width:450px;
+	/* border:1px solid blue*/
+}
+.wrapper .content .false{
+	top:265px;
+}
+.wrapper .content .true{
+	top:225px;
+}
+.wrapper .content  #warn{
+	display:none;
+	position:absolute; 
+	left:20px;
+	top:260px;
+	color:red;
+}
+.wrapper .content #footer #btn{
+	position:absolute; 
+	top:35px;
+	left:0;
+	width:150px;
+	height:50px;
+	background-color:red;
+	line-height:50px;
+	color:white;
+}
+.wrapper .content #footer .regiter{
+	position:absolute; 
+	top:50px;
+	left:153px;
+}
+.wrapper .content #footer .regiter .go{
+	color:red;
+}
+.wrapper .content #footer .forgetPassword{
+	position:absolute; 
+	top:50px;
+	right:-6px;
+}
+.wrapper .content #footer .money{
+	position:absolute;
+	top:118px;
+	left:50%;
+	margin-left:-140px;
+	width:280px;
+	}
+.wrapper .content #footer .money .wechat,.zhifubo{
+	display:inline-block;
+}
+.wrapper .content #footer .money .wechat{
+	position:absolute;
+	left:0px;
+}
+.wrapper .content #footer .money .zhifubao{
+	position:absolute;
+	right:-30px;
+}		
