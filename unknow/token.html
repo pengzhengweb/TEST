@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>token检测</title>
+	</head>
+	<body>
+		<script src="jquery.js" ></script>
+		<script>
+			$.ajax({
+				url:"http://8080",
+				data:{data:"data"},
+				type:"POST",
+				dataType:"json",
+				async:false,
+				cache:false,
+				success:function(data,headers){
+					console.log(data);
+					console.log(headers);
+				},
+				error:function(data){
+					console.log(data);
+				}
+			})
+		</script>
+		
+	</body>
+</html>
