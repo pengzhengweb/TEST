@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <style>
+        body{
+            background: skyblue;
+            color: #fff;
+            padding: 30px;
+        }
+
+        h1{
+            font-size: 48px;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        p{
+            font-size: 16px;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>Webcome To <%= websiteName %> page!</h1>
+
+    <h2>个人介绍</h2>
+
+    <ul>
+        <% data.forEach(function (item) { %>
+            <li><%= item.age %></li>
+            <% item.name.forEach(function (item) { %>
+                    <li><%= item.name %></li>
+            <% })%>
+        <% }) %>
+    </ul>
+
+</body>
+</html>
